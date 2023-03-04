@@ -10,12 +10,14 @@ const PORT = 3000
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    console.log("Homepage accessed\n")
+    res.send('Welcome to my express app !!')
   })
 
 //webhook endpoint
 app.post("/hook", (req, res) => {
   console.log(req.body) // Call your action on the request here
+  console.log(`User name is ${req.body.name}\n`)
   res.status(200).end() // Responding is important
 })
 
